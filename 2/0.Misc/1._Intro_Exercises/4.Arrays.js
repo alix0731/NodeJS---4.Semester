@@ -68,9 +68,9 @@ console.log(arr);
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
-let diet1 = diet;
+let dinnerTray = diet;
 
-console.log(diet1);
+console.log(dinnerTray);
 
 
 // --------------------------------------
@@ -80,10 +80,9 @@ const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
 
 // log every second char in the array starting from b
 
-for(){
-    
+for(let i = 1; i < lettersExpanded.length; i = i + 2){
+    console.log(lettersExpanded[i]);
 }
-
 
 // --------------------------------------
 // Exercise 8 - For loop and if statement
@@ -94,6 +93,17 @@ const discardedNumbers = [];
 
 // log the element if the number is above 6 or below 0
 // else push them to the array discardedNumbers
+
+for(let i = 0; i < numbers.length; i++){
+    if(numbers[i] > 6 || numbers[i] < 0){
+        console.log(numbers[i]);
+    }
+    else{
+        discardedNumbers.push(numbers[i]);
+    }
+    }
+
+console.log(discardedNumbers);
 
 // --------------------------------------
 
