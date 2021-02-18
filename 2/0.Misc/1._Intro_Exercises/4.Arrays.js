@@ -16,11 +16,17 @@ const friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
 
-friends[0] = "James";
+const jamie = {
+    name: "jamie",
+    age: 30
+};
 
-friends[1] = "Adam";
-
-friends[2] = "Lui";
+friends.push(jamie);
+friends.push(
+    {
+        name: "ALi",
+        age: 2
+    });
 
 console.log(friends);
 // --------------------------------------
@@ -68,9 +74,13 @@ console.log(arr);
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
-let dinnerTray = diet;
+// hvis man bruger slice giver man data til et ny array, hvor imod hvis man bare sagde = diet, så refererer man tilbage til den gamle array
+let dinnerTray = diet.slice();
 
-console.log(dinnerTray);
+const dinnerTrayTwo = [...diet]; // spread operator ...
+// hvis man bare sagde [diet], så kommer det i en array i en array, men når man bruger en spread operator så er det kun værdierne kommer i arrayet.
+
+console.log(dinnerTrayTwo);
 
 
 // --------------------------------------
@@ -80,7 +90,7 @@ const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
 
 // log every second char in the array starting from b
 
-for(let i = 1; i < lettersExpanded.length; i = i + 2){
+for (let i = 1; i < lettersExpanded.length; i = i + 2){
     console.log(lettersExpanded[i]);
 }
 
@@ -101,9 +111,10 @@ for(let i = 0; i < numbers.length; i++){
     else{
         discardedNumbers.push(numbers[i]);
     }
-    }
+}
 
 console.log(discardedNumbers);
+
 
 // --------------------------------------
 

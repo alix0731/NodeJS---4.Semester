@@ -29,8 +29,9 @@ console.log("Opg 2 : " + myObj1);
 // Exercise 3 - Add a property 
 
 const stackOverflow = {
-    isAllowed: true
 };
+
+stackOverflow.isAllowed = true;
 
 console.log(stackOverflow.isAllowed);
 
