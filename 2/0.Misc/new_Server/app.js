@@ -11,7 +11,7 @@ app.get("/", (req, res)=> {
 // create a route on endpoint me which sends back a json that represents you
 
 app.get("/me", (req, res) => {
-    res.send({name: "ali", age: 19});
+    res.send({name: "Ali Raza", age: 13});
 })
 
 
