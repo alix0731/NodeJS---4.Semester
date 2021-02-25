@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const PORT = 8080;
+const PORT = 8081;
 
 app.get("/" , (req, res) => {
     res.send({
@@ -25,23 +25,28 @@ app.get("/time", (req, res)=>{
 
 /////day router
 
-let dayMap = new Map();
-dayMap[1] = "monday";
-dayMap[2] = "tuesday";
-dayMap[3] = "wednesday";
-dayMap[4] = "thursday";
-dayMap[5] = "friday";
-dayMap[6] = "saturday";
-dayMap[7] = "sunday";
+const weekdays = {}
+
+let dayMap = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 
 const day = today.getDay();
 console.log(dayMap[day]);
 
 app.get("/day", (req, res) =>{
-    res.send({day: dayMap[day]});
+    res.send({day: dayMap[day] });
 })
 
 
+//// task in the class
+let a = "1.0.7";
+app.get("/about", (req, res) => {
+    res.send({version: a});
+});
+
+/// sender header text
+app.get("/page", (req, res) => {
+res.send("<h1>Welcome<h1>");
+});
 
 //// month router
 
@@ -61,5 +66,7 @@ date_today = today.getDate() + "/" + (today.getMonth()+1) + "/" + today.getFullY
 app.get("/date", (req, res) => {
     res.send({"date": date_today});
 })
+
+
 
 app.listen(PORT, () => console.log(`server startet at port: ${PORT}`));
