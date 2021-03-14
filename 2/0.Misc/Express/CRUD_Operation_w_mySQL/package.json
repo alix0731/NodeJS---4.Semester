@@ -1,0 +1,19 @@
+{
+    
+    "dependencies": {
+    
+        
+    "express": "4.17.1",
+    
+        
+    "mysql": "2.18.1"
+    
+    },
+    
+    "scripts": {
+    
+        
+    "start": "PORT=3000 nodemon app.js"
+    
+    }
+}

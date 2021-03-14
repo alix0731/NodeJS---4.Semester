@@ -1,0 +1,16 @@
+
+GET /anime_names
+GET /anime_names/id
+
+
+POST /anime_names, grunden til at man ikke bruger id er fordi så klineten ikke skal bestemme id'et, da alle id skal være unikke og derfor skal auto genereres
+
+
+PATCH /anime_names/id, da man skal redigere det enkelte id
+
+## difference
+# PUT replaces the entire ressource
+# PATCH replaces a path of the ressource
+
+
+DELETE /anime_names/id 

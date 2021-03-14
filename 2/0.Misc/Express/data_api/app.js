@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const fs = require("fs"); // læser html klasser 
+
 // needed to send body == pas the body as JSON
 app.use(express.json());
 
