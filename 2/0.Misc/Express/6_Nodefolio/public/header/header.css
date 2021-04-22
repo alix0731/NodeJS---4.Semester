@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+.logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+}
+
+
+
+#main-content {
+    min-height: calc(100vh - 120px);
+}

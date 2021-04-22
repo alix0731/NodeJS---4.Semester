@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic of JS</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header id="header">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand" href="/"><b>NodeJS</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/basic">Basic<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/commandlines">Commmandline</a>
+                <a class="nav-item nav-link" href="/express">Express</a>
+                <a class="nav-item nav-link" href="/contact">Contact</a>
+              </div>
+            </div>
+                
+            </div>
+            
+        </nav>
+        
+    </header>
+
+    <main>
+
+        <br>
+
+    <div class="container">
+        <h1>Basic</h1>
+
+        <hr>
+
+        
+
+        <div>
+
+            <h3>Variables</h3>
+            <p>Variables can be of these types:</p>
+            <ul>
+                <li>const</li>
+                <li>let</li>
+                <li>var</li>
+            </ul>
+            <p>It is recommended that we only use let and const variables</p>
+
+        </div>
+    
+        <div>
+
+            <h3>Lists</h3>
+            <ul>
+                <li>const List = new List();</li>
+                <li>const arr = [1,2,3];</li>
+            </ul>
+
+        </div>
+
+        
+        <div>
+            <h3>Funtion</h3>
+            <h4>3 ways to create functions</h4>
+            <ul>
+                <li>
+                    const a = function(){<br>
+                    console.log("test");<br>
+                    }
+            </li>
+                <li>
+                    function myFirstGreeting(name){<br>
+                    return "Hello " + name;<br>
+                    } 
+                </li>
+                <li>
+                    const sayHi = () => { <br>
+                        console.log("HI");<br>
+                    } 
+                </li>
+            </ul>
+
+            <h4>Callback functions</h4>
+            <p>Callback functions er basically function with in functions. That means when you call a funtion, then you have to pas in a functions as a argument</p>
+            <p>Ex: Here is an example where we create a function using lambda expression with in a function</p>
+            <ul>
+                <li>
+                    test(name => ("Eat") + name, "Ali");
+                </li>
+            </ul>
+
+        </div>
+
+    
+
+        <div>
+            <h3>Loops</h3>
+            <p>In nodeJS we can loop trough lists in many different ways</p>
+            <p>The most used was are:</p>
+            <ul>
+                <li>map <br>
+                    const array  = [1,4,6,8,34,6,3,1]; <br>
+
+                    const newArray = array.map((number) => { <br>
+                        return number ** 2; <br>
+                    });
+                
+                </li>
+                <li>filter <br>
+                    const arr1 = array.filter(num => num != 6);
+                </li>
+                <li>
+                    foreach <br>
+                    foreach(var a in arr){ <br>
+                        console.log(a); <br>
+                    } <br>
+                </li>
+            </ul>
+
+        </div>
+
+        
+
+        <div>
+            <h3>Strict</h3>
+            <ul>
+                <li>It helps you to write cleaner code, like preventing you from using undeclared variables.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Scoope</h3>
+            <p>There is 2 type of scoope</p>
+            <ul>
+                <li>local scooep</li>
+                <li>global scoope</li>
+            </ul>
+            <p>Local scoope is where you only can access given variables in a function</p>
+            <p>Global scoope is when you can access variables in every function, because the given variable is outside</p>
+        </div>
+
+
+
+        
+
+
+    </div>
+
+    </main>
+
+
+    <footer id="footer">
+
+        <div class="container">
+    
+            <img width="100%" src="https://blog.42mate.com/wp-content/uploads/2016/08/Node-js-Logo.png" alt="nodeLogo">
+    
+            <hr>
+        
+        
+        </div>
+    
+        <div>
+    
+            <p class="bg-success copy">© Copyright <b>ARS8 - 2021</b></p>
+    
+        </div>
+    </footer>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+    
+</body>
+</html>

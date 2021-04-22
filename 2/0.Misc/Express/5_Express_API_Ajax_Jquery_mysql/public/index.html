@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+</head>
+<body>
+
+
+    <div>
+
+        <button onclick="fetch()">Get</button>
+
+
+
+        <ul id="liste">
+
+        </ul>
+
+        
+
+
+       
+    </div>
+    
+
+
+<script>
+
+    function fetch(){
+        $.ajax({
+            url: "/todos",
+            type: "GET",
+            contentType: "Application/JSON",
+            success: data =>{
+                $("#liste").html("<li>" + JSON.stringify(data[0].todo) + "</li>");
+            },
+            error: data =>{
+
+            }
+        });
+    }
+
+</script>
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commandlines</title>
+
+
+      <!-- BOOTSTRAP -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+
+<header id="header">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="/"><b>NodeJS</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/basic">Basic<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/commandlines">Commmandline</a>
+            <a class="nav-item nav-link" href="/express">Express</a>
+            <a class="nav-item nav-link" href="/contact">Contact</a>
+          </div>
+        </div>
+            
+        </div>
+        
+    </nav>
+    
+</header>
+
+
+<main>
+
+    <br>
+
+    <div class="container">
+        <h1>Commandlines used in NodeJS</h1>
+
+        <hr>
+
+        <h3>Npm - Node Package Manager </h3>
+        <ul>
+            <li>
+                npm install or npm i
+            </li>
+            <li>
+                npm install 'packagename'
+            </li>
+            <li>
+                npm run 'scriptname'
+            </li>
+            <li>
+                npm i -g 'packagename'
+            </li>
+            <li>
+                npm un
+            </li>
+        </ul>
+
+
+        <h3>Nodemon</h3>
+        <p>nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.</p>
+        <ul>
+            <li>
+                Install: <br>
+                npm install -g nodemon or npm install --save-dev nodemon
+            </li>
+            <li>
+                How to use: <br>
+                nodemon [your node app]
+            </li>
+        </ul>
+
+
+        <h3>Make short commands witht scripts</h3>
+        <p>Eksample:</p>
+        <ul>
+            <li>
+                "scripts": { <br>
+                    "start": "node app.js", <br>
+                    "start_dev": "PORT=3000 nodemon app.js" <br>
+                }
+            </li>
+            <li>npm run start</li>
+        </ul>
+    </div>
+
+</main>
+
+
+
+<footer id="footer">
+
+    <div class="container">
+
+        <img width="100%" src="https://blog.42mate.com/wp-content/uploads/2016/08/Node-js-Logo.png" alt="nodeLogo">
+
+        <hr>
+    
+    
+    </div>
+
+    <div>
+
+        <p class="bg-success copy">© Copyright <b>ARS8 - 2021</b></p>
+
+    </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>

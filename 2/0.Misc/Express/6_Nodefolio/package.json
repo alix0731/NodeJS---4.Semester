@@ -1,0 +1,22 @@
+{
+  "name": "nodefolio",
+  "version": "0.0.1",
+  "description": "This is a personal portfolio written in NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "portfolio",
+    "personal",
+    "website",
+    "kea"
+  ],
+  "author": "A.R.A",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.5.0",
+    "nodemon": "^2.0.7"
+  }
+}

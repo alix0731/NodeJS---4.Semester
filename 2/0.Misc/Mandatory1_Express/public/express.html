@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express</title>
+
+
+      <!-- BOOTSTRAP -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+
+    <header id="header">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand" href="/"><b>NodeJS</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/basic">Basic<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/commandlines">Commmandline</a>
+                <a class="nav-item nav-link" href="/express">Express</a>
+                <a class="nav-item nav-link" href="/contact">Contact</a>
+              </div>
+            </div>
+                
+            </div>
+            
+        </nav>
+        
+    </header>
+
+
+    <main>
+
+        <br>
+    
+        <div class="container">
+            <h1>Express</h1>
+            <hr>
+
+            <h3>What is it?</h3>
+            <p>Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
+
+            <h3>How do we use it?</h3>
+            <p>You start by downloading express by use a commandlinec called 'npm install express' or you just put express in package.json</p>
+            <p>Then you create at file called app.js, in here you need this code to get startet: 
+
+            <ul>
+                <li>
+                    const express = require('express'); <br>
+                    const app = express(); <br>
+
+                    app.use(express.static('public')); <br>
+
+                    const PORT = 8080;<br>
+
+                    <br>
+
+                    app.get("/anime_names", (req, res)=>{ <br>
+                        res.send({anime: anime_names}); <br>
+                    }); <br>
+
+                    <br>
+                    
+                    app.get("/anime_names/:id", (req, res)=>{ <br>
+                        const animeNameId = req.params.id; <br>
+                        const foundAnime = anime_names.find(anime => anime.id === animeNameId); <br>
+                        res.send({data: foundAnime}); <br>
+                    }); <br>
+
+                    <br>
+                    
+                    app.post("/anime_name", (req, res)=>{ <br>
+                        const newAnimeName  = req.body; <br>
+                        newAnimeName.id = ++AUTOINCREMENT; <br>
+                        anime_names.push(newAnimeName); <br>
+                        res.send({data: req.body}); <br>
+                    }); <br>
+
+                    <br>
+
+                    let monke = {banana: "good"}; <br>
+                    let krab = {epiphany: "krab"}; <br>
+                    console.log({...monke, ...krab}); <br>
+                    <br>
+                    // patch update path of a resource <br>
+                    app.patch("anime_names/:id", (req, res)=>{ <b></b>
+                        anime_names = anime_names.map(animeName =>{ <b></b>
+                            if(animeName.is === Number(req.params.id)){ <br>
+                               
+                                return { ...animeName, ...req.body, id: animeName.id}; // id: bliver altid det samme, selv om man skulle ændre det i req.body <br>
+                            } <br>
+                            return animeName; <br>
+                        }); <br>
+                        res.send({data: wasUpdated}); <br>
+                    }); <br>
+
+                    <br>
+                    
+                    app.delete("/anime_names/:id", (req, res)=>{ <br>
+                        anime_names = anime_names.filter(animeName => animeName.id !== Number(req.params.id)); <br>
+                        res.send({ <br>
+                            data: anime_names <br>
+                        }); <br>
+                    }); <br> 
+                    
+                    
+                    <br>
+
+                    app.listen(PORT, (error)=>{ <br>
+                         if (error) { <br>
+                            console.log(error); <br>
+                        } <br>
+                        else{ <br>
+                             console.log("Server runnning on port", PORT); <br>
+                        } <br>
+}                   ); 
+                </li> 
+            </ul>
+
+            <p>To create route for a page you have to use the function get inside app, where you give a string as a argument</p>
+            <p>Next you use the variables in the callback fuction, where you write <b>res.sendFile(__dirname + "pathToHtmlFile")</b></p>
+            <p>"__dirname" is used to located the current location of the folder and then add the folder/file name</p>
+            <p>We also use <b>app.listen</b> to tell with port the server should run on</p>
+
+            <h3>Send object with response</h3>
+            <p>We can also send object with response variable</p>
+            <p>This is how its done:</p>
+            <ul>
+                <li>
+                    app.get("/", (req, res) => { <br>
+                        res.send({data = "Ali"}); <br>
+                     }); <br>
+                </li>
+            </ul>
+
+            <h3>Other:</h3>
+            <ul>
+                <li><b>app.use(express.json()) </b> : This is used when you are converting incomming data to json</li>
+                <li><b>app.use(express.static('public'))</b> : This is used to make all HTML, CSS & JS file static</li>
+            </ul>
+
+        </div>
+
+    </main>
+
+
+
+<footer id="footer">
+
+    <div class="container">
+
+        <img width="100%" src="https://blog.42mate.com/wp-content/uploads/2016/08/Node-js-Logo.png" alt="nodeLogo">
+
+        <hr>
+    
+    
+    </div>
+
+    <div>
+
+        <p class="bg-success copy">© Copyright <b>ARS8 - 2021</b></p>
+
+    </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>

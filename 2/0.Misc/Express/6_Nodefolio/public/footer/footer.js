@@ -1,0 +1,1 @@
+document.getElementById("footer-copyright").innerHTML = `© ARS8 - ${new Date().getFullYear()}`;

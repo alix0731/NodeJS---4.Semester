@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat facts</title>
+</head>
+<body>
+
+    <h1>Hello</h1>
+    <button onclick="fetch()">Click</button>
+    <p id="msg"></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./cat.js"></script>
+    <script>
+        //https://cat-fact.herokuapp.com/facts/random
+        //todo: use ajax in jQuery that we included above to call cat facts trough the URL above
+
+
+        //ajax alows you to fecth from api
+        
+        //$.get
+        $.get("https://cat-fact.herokuapp.com/facts/random?amount=500", (response)=>{
+           // $("#msg").append("<li>" + response.text + "<li>");
+            const catFacts = document.getElementById("msg");
+            response.map(fact => {
+               catFacts.innerText = fact.text;
+            })
+           
+        });
+    
+        
+
+        function fetch(){
+
+            
+            // $.ajax({
+            //     url: "https://cat-fact.herokuapp.com/facts/random",
+            //     type: "GET",
+            //     dataType: "JSON",
+            //     data: JSON.stringify({}),
+            //     success:function(data){
+            //         $("#msg").append("<li>" + JSON.stringify(data.text) + "</li>")
+            //     }
+            // });
+        }
+
+        fetch("pub?m")
+
+    </script>
+</body>
+</html>
