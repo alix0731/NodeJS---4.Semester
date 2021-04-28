@@ -40,11 +40,11 @@ router.get("/api/projects", (req, res) => {
     res.send({projects});
 });
 
-router.get("/api/details/:id", (req, res) => {
-    var obj = projects.filter(p => p.id == req.params.id);
-    console.log(obj);
-    res.send(obj);
+router.get("/api/project/:id", (req, res) => {
+    const project = projects.filter(p => p.id == req.params.id);
+    res.send(project);
 });
+
 
 
 
@@ -59,7 +59,7 @@ router.post("/api/addproject", (req, res) => {
     startdate: new Date(req.body.startdate),
     enddate: new Date(req.body.enddate),
     gitLink: req.body.gitLink
-}
+    }   
 
 projects.push(obj);
 

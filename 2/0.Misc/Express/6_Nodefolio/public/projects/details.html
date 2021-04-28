@@ -1,24 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-<h1>Details</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1 id="title" ></h1>
 
 
-<table class="table table-borded table-hover">
-<thead>
-    <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Start date</th>
-        <th>End date</th>
-        <th>Git link</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td id="title"></td>
-        <td id="decsription"></td>
-        <td id="startdate"></td>
-        <td id="enddate"></td>
-        <td id="gitlink"></td>
-    </tr>
-</tbody>
-</table>
+    <script>
+        $.ajax({
+            url: "/api/project/1",
+            type: "GET",
+            success: function(data){
+                console.log(data[0].title);
+            },
+            error: function(){
+                console.log("ERROR");
+            }
+        });
+    </script>
+</body>
+</html>

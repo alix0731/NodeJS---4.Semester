@@ -37,7 +37,6 @@ const footer = fs.readFileSync(__dirname + "/public/footer/footer.html", "utf-8"
 //projects
 const projectspage = fs.readFileSync(__dirname + "/public/projects/projects.html", "utf-8");
 const addproject = fs.readFileSync(__dirname + "/public/projects/createProjects.html", "utf-8");
-const details = fs.readFileSync(__dirname + "/public/projects/details.html", "utf-8");
 //contacts 
 const contactpage = fs.readFileSync(__dirname + "/public/contacts/contacts.html", "utf-8");
 

@@ -1,0 +1,32 @@
+
+start mongodb
+- ./mongod --dbpath ./data/db
+
+use databasename
+
+db.createCollection("types")
+
+
+show collections
+
+
+> db.types.find()
+
+db.myCollection.find().pretty()
+
+
+db.types.insert({type: "IPA"})
+
+
+ db.types.remove({id: true})
+
+
+  db.types.deleteMany({id: true})
+
+
+ db.types.update({brand: "juice"}, {brand: "Cola"})
+
+db.Employee.update(
+{"Employeeid" : 1},
+{$set: { "EmployeeName" : "NewMartin"}});
+

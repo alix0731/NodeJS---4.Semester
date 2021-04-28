@@ -11,9 +11,12 @@
         result.projects.map(project => {
             const projectDiv = document.createElement("div");
 
-            const titleHeader = document.createElement("h2");
+            const titleHeader = document.createElement("a");
             titleHeader.classList.add("project-title");
             titleHeader.innerText = project.title;
+            titleHeader.href = "/api/project/" + project.id;
+            
+
 
             const descriptionP = document.createElement("p");
             descriptionP.classList.add("description");
